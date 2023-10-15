@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<style>
+ 
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #EDE7F6;
+            margin: 0;
+            padding: 0;
+        }
+    
+        #start {
+            text-align: center;
+            margin-top: 50px;
+        }
+    
+        .mg {
+            background-color: purple;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .text{
+            text-align: center;
+        }
+
+        .pag30{
+            display: none;
+           border-color: purple;
+           position: absolute;
+           top:105%;
+           left: 15%;
+        }
+
+        .grama{
+            display: flex;
+            position: absolute;
+            height: 200px;
+            width:800px ;
+            left: 40%;
+            top:41%;
+        }
+
+        .lavanda {
+            display: none;
+            position: absolute;
+            top: 33%;
+            width: 750px;
+            left: 42%;
+            height: 260px;
+        }
+
+    .borboleta{
+        display: none;
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        top:36%;
+        left: 43%;
+    }
+
+    .abelha{
+        display: none;
+        position: absolute;
+        width: 110px ;
+        height: 100px ;
+        top: 40% ;
+        left: 65%;
+    }
+    
+.check{
+    position: absolute;
+    left: 10%;
+}
+
+</style>
+
+<body>
+    <div class="mg"><h1>Mouse Game</h1></div>
+
+    <br>
+    <p class="text"> Selecione uma das opções nas caixas de seleção abaixo e clique no botão ‘Continuar’.	</p>
+    <p class="text"> Complete o jardim!</p>
+
+</br>
+<div>
+    <form class="check">
+        <input class="checkbox" type="checkbox" onclick="click1()" >
+        <label>Lavanda</label><br>
+        <input class="checkbox1" type="checkbox" onclick="click2()" >
+        <label>Borboleta</label><br>
+        <input class="checkbox2" type="checkbox" onclick="click3()" >
+        <label>Abelha</label><br>
+       
+
+        <button class="pag30" type="button" onclick="mudar()">continue</button>
+    </form>
+
+        <picture>
+            <img class="grama" src="29.png" alt="grama">
+            <img class="lavanda" src="page30.png" alt="lavanda">
+            <img class="borboleta" src="2page22.png" alt="borboleta">
+            <img class="abelha" src="2page30.png" alt="abelha">
+           
+
+        </picture>
+
+</div>
+
+
+        
+    <script>
+
+function mudar() {    // Redireciona para a página desejada quando o botão "continue" é clicado
+    window.location.href = 'index31.html';
+}
+
+function click1() {
+    var checkbox = document.querySelector('.checkbox');
+    var imagemCabelo = document.querySelector('.lavanda');
+    var botao = document.querySelector('.pag30');
+
+    if (checkbox.checked) {
+        imagemCabelo.style.display = 'block';
+        botao.style.display = 'block';
+        
+    } else {
+        imagemCabelo.style.display = 'none';
+        
+    }
+}
+
+function click2() {
+    var checkbox = document.querySelector('.checkbox1');
+    var imagemCabelo = document.querySelector('.borboleta');
+    var botao = document.querySelector('.pag30');
+
+    if (checkbox.checked) {
+        imagemCabelo.style.display = 'block';
+        botao.style.display = 'block';
+    } else {
+        imagemCabelo.style.display = 'none';
+        
+    }
+}
+
+function click3() {
+    var checkbox = document.querySelector('.checkbox2');
+    var imagemCabelo = document.querySelector('.abelha');
+    var botao = document.querySelector('.pag30');
+
+    if (checkbox.checked) {
+        imagemCabelo.style.display = 'block';
+        botao.style.display = 'block';
+    } else {
+        imagemCabelo.style.display = 'none';
+        
+    }
+}
+
+
+
+
+
+    </script>
+
+</div>

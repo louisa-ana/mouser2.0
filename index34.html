@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #EDE7F6;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .mg {
+        background-color: purple;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .text {
+        text-align: center;
+    }
+    
+    #botao{
+       
+    display: none;
+    position: relative;
+    left: 49%;
+    border-color: blueviolet;
+    top: 40%;
+
+    }
+
+    #lista{
+       position: relative;
+       left: 40%;
+    }
+</style>
+  
+  
+
+
+<body>
+    <div class="mg"><h1>Mouse Game</h1></div>
+
+    <br>
+    <p class="text">Selecione "Nove" na caixa de listagem suspensa e clique no botão 'Continuar'. </p>
+    <p class="text"> Selecione uma opção:</p>
+    <br>
+
+    <select name="listaa" id="lista"  onclick="botao()">
+        <option value="Um">Um</option>
+        <option value="Dois">Dois</option>
+        <option value="Tres">Tres</option>
+        <option value="Quatro">Quatro</option>
+        <option value="Cinco">Cinco</option>
+        <option value="Seis">Seis</option>
+        <option value="Sete">Sete</option>
+        <option value="Oito">Oito</option>
+        <option value="Nove">Nove</option>
+        <option value="Dez">Dez</option>
+
+    </select>
+    <button id="botao" onclick="location = 'index35.html'">Continuar</button>
+
+</body>
+<script>
+
+    function botao(){
+        if (document.getElementById("lista").value == "Nove")
+            document.getElementById("botao").style.display = "block";
+        else document.getElementById("botao").style.display = "none";
+
+    }
+
+</script>
+
+</html>
+</html>

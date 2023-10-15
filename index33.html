@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #EDE7F6;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .mg {
+        background-color: purple;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .text {
+        text-align: center;
+    }
+    
+    #botao{
+    display: none;
+    position: relative;
+    left: 49%;
+    border-color: blueviolet;
+    top: 40%;
+    }
+
+    #lista{
+        position: relative;
+        left: 40%;
+    }
+</style>
+  
+  
+
+
+<body>
+    <div class="mg"><h1>Mouse Game</h1></div>
+
+    <br>
+    <p class="text">A pequena caixa branca abaixo é uma caixa de lista suspensa. Clique na seta triangular preta à direita para abrir a lista de opções e, a seguir, clique na opção desejada. </p>
+    <p class="text"> Selecione o dia de hoje ("Terça-feira") na caixa de listagem suspensa e clique no botão 'Continuar'.</p>
+    <br>
+
+    <select name="listaa" id="lista"  onclick="botao()">
+        <option value="Um">Segunda-feira</option>
+        <option value="Dois">Terça-feira</option>
+        <option value="Tres">Quarta-feira</option>
+        <option value="Quatro">Quinta-feira</option>
+        <option value="Cinco">Sexta-feira</option>
+        <option value="Seis">Sabado</option>
+        <option value="Sete">Domingo</option>
+
+    </select>
+
+    <button id="botao" onclick="location = 'index34.html'">Continuar</button>
+</body>
+<script>
+    function botao(){
+        if (document.getElementById("lista").value == "Dois")
+            document.getElementById("botao").style.display = "block";
+        else document.getElementById("botao").style.display = "none";
+    }
+
+</script>
+
+</html>

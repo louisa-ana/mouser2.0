@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<style>
+ 
+body {
+        font-family: Arial, sans-serif;
+        background-color: #EDE7F6;
+        margin: 0;
+        padding: 0;
+    }
+
+    #start {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .mg {
+        background-color: purple;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    .texto{
+        text-align: center;
+    }
+    #boo1, #boo2, #boo3, #boo4, #boo5, #boo6{
+height: 100px;
+width: 100px;
+cursor: pointer;
+
+}
+
+
+.boo{
+position: relative;
+left: 38%;
+display: grid;
+grid-template-columns: 120px 120px 120px;
+grid-template-rows:  150px 150px 150px;
+padding: 30px;
+
+}
+
+.text{
+  text-align: center;
+}
+
+#btcontinue3{
+    display: none;
+    position: relative;
+    left: 49%;
+    border-color: blue;
+
+}
+    
+</style>
+
+<body>
+    <div class="mg"><h1>Mouse Game</h1></div>
+    <br>
+    <p class="text"> Clique <strong>duas vezes</strong> em cada uma das <strong>borboletas</strong> abaixo para abri-las e prossiga para a próxima página.</p>
+
+    <br>
+
+ 
+
+    <div class="boo">
+
+        <picture><img  id="boo1" src="page22.png" ondblclick="altimg('boo1')"></picture>
+        <picture><img  id="boo2" src="page22.png" ondblclick="altimg('boo2')"></picture>
+        <picture><img  id="boo3" src="page22.png" ondblclick="altimg('boo3')"></picture>
+        <picture><img  id="boo4" src="page22.png" ondblclick="altimg('boo4')"></picture>
+        <picture><img  id="boo5" src="page22.png" ondblclick="altimg('boo5')"></picture>
+        <picture><img  id="boo6" src="page22.png" ondblclick="altimg('boo6')"></picture>
+
+    </div>
+
+ 
+
+    <button id="btcontinue3" onclick="location = 'index23.html'">Continue</button>
+
+
+
+
+<script>
+    var tghost = 0;
+    var ghost = 6;
+    
+
+
+function vghost(){
+if(tghost===ghost) {
+    document.getElementById("btcontinue3").style.display = "block";  
+    }
+}
+
+var imgclick ={}
+function altimg(id){
+const newimg = "2page22.png"
+var imagem = document.getElementById(id);
+if (imagem.src !== newimg && !imgclick[id]){
+imgclick[id] = true;
+imagem.src = newimg;
+tghost ++;
+vghost();
+}
+}
+
+   
+
+
+
+    </script>
+</body>
+</html>

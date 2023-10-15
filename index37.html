@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+       
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #EDE7F6;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .mg {
+        background-color: purple;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .text {
+        text-align: center;
+    }
+    
+    #botao{
+    position: relative;
+    left: 49%;
+    border-color: blueviolet;
+    top: 40%;
+    }
+
+    .input{
+     position: absolute;
+     left: 30px;
+     
+    }
+    </style>
+</head>
+
+<body>
+<div>
+    <div class="mg"><h1>Mouse Game</h1></div>
+
+    <br>
+    <p class="text">Preencha os campos abaixo com seu nome e sobrenome </p>
+    <p class="text">Quando terminar clique no botão enviar</p>
+    <br>
+
+    <form class="input">
+        <label for="nome"><strong>Primeiro Nome:</strong></label>
+        <input type="text" id="nome">
+        <br>
+        <label for="sobrenome"><strong>Segundo Nome:</strong></label>
+        <input type="text" id="sobrenome">
+    </form>
+    <button id="botao" onclick="proximoPagina()">Enviar</button>
+</div>
+<script>
+    function proximoPagina() {
+        var nome = document.getElementById("nome").value;
+        var sobrenome = document.getElementById("sobrenome").value;
+
+        if (nome !== "" && sobrenome !== "") {
+            localStorage.setItem("nome", nome);
+            localStorage.setItem("sobrenome", sobrenome);
+            location.href = "index38.html";
+        } else {
+            alert("Preencha o nome e sobrenome antes de prosseguir.");
+        }
+    }
+</script>
+</body>
+</html>

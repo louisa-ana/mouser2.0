@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+               #botao {
+            display: none;
+            border-color: lightblue;
+            position: absolute;
+            left: 47%;
+            top:65%;
+        }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #EDE7F6;
+        margin: 0;
+        padding: 0;
+    }
+
+    #start {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .mg {
+        background-color: purple;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .text{
+        text-align: center;
+    }
+    
+    .radio-buttons{
+        position: absolute;
+        left: 45%;
+        top: 35%;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="mg"><h1>Mouse Game</h1></div>
+
+    <br>
+    <p class="text"> Os botões de opção permitem escolher apenas uma opção de um grupo de opções. Clique em cada um dos botões de opção abaixo para continuar. </p>
+    <p class="text">(Observe que apenas um será selecionado por vez.)</p>
+    <br>
+
+<div class="radio-buttons">
+    <input type="radio" id="option1" name="options" value="1" onclick="check(1)"/>
+    <label for="option1">Edgar Allan Poe</label>
+    <br>
+    <input type="radio" id="option2" name="options" value="2" onclick="check(2)"/>
+    <label for="option2">Jane Austen</label>
+    <br>
+    <input type="radio" id="option3" name="options" value="3" onclick="check(3)"/>
+    <label for="option3">Machado de Assis</label>
+    <br>
+    <input type="radio" id="option4" name="options" value="4" onclick="check(4)"/>
+    <label for="option4">Antoine de Saint-Exupéry</label>
+    <br>
+    <input type="radio" id="option5" name="options" value="5" onclick="check(5)"/>
+    <label for="option5">Emily Dickinson</label>
+    <br>
+    <input type="radio" id="option6" name="options" value="6" onclick="check(6)"/>
+    <label for="option6">Fyodor Dostoevsky</label>
+    <br>
+    <input type="radio" id="option7" name="options" value="7" onclick="check(7)"/>
+    <label for="option7">Virginia Woolf</label>
+    <br>
+    <input type="radio" id="option8" name="options" value="8" onclick="check(8)"/>
+    <label for="option8">Gabriel García Márquez</label>
+    <br>
+    <input type="radio" id="option9" name="options" value="9" onclick="check(9)"/>
+    <label for="option9">Franz Kafka</label>
+    <br>
+    <input type="radio" id="option10" name="options" value="10" onclick="check(10)"/>
+    <label for="option10">Leo Tolstoy </label>
+</div>
+<br>
+<button id="botao" onclick="location = 'index32.html'">Continuar</button>
+
+<script>
+    var selectedOptions = [];
+
+    function check(option) {
+        if (!selectedOptions.includes(option)) {
+            selectedOptions.push(option);
+        }
+        if (selectedOptions.length === 10) {
+            document.getElementById("botao").style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>

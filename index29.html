@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #botao {
+            display: none;
+            border-color: lightblue;
+            position: absolute;
+            left: 45%;
+            top:65%;
+        }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #EDE7F6;
+        margin: 0;
+        padding: 0;
+    }
+
+    #start {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .mg {
+        background-color: purple;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .text{
+        text-align: center;
+    }
+    
+    .checkbox{
+        position: absolute;
+        left: 15%;
+        top: 30%;
+    }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="mg"><h1>Mouse Game</h1></div>
+
+    <br>
+    <p class="text"> As caixas de seleção permitem selecionar uma ou mais opções de um grupo de opções. Clique dentro de cada uma das caixas de seleção brancas abaixo para continuar.</p>
+    <br>
+
+<div class="checkbox">
+    <input type="checkbox" id="1" onclick="check(1)"/>
+    <label for="1">"A beleza é o esplendor da verdade." - Platão</label>
+    <br>
+    <input type="checkbox" id="2" onclick="check(2)"/>
+    <label for="2">"A beleza é o esplendor da verdade." - Platão</label>
+    <br>
+    <input type="checkbox" id="3" onclick="check(3)"/>
+    <label for="3">"O tempo é uma flor que se desabrocha lentamente." - Leonardo da Vinci</label>
+    <br>
+    <input type="checkbox" id="4" onclick="check(4)"/>
+    <label for="4">"O homem é o único animal que ri e chora; pois ele é o único animal que está atormentado pela diferença entre o que ele é e o que ele deseja ser." - William Hazlitt</label>
+    <br>
+    <input type="checkbox" id="5" onclick="check(5)"/>
+    <label for="5">"A dúvida é o começo da sabedoria." - René Descartes</label>
+    <br>
+    <input type="checkbox" id="6" onclick="check(6)"/>
+    <label for="6">"A virtude é tão perseguida no mundo, que, quando ela aparece, todos se levantam contra ela." - Maquiavel</label>
+    <br>
+    <input type="checkbox" id="7" onclick="check(7)"/>
+    <label for="7">"A sabedoria é a filha do tempo, não da autoridade." - Francis Bacon</label>
+    <br>
+    <input type="checkbox" id="8" onclick="check(8)"/>
+    <label for="8">"A arte diz o indizível; exprime o inexprimível, traduz o intraduzível." - Leonardo da Vinci</label>
+    <br>
+    <input type="checkbox" id="9" onclick="check(9)"/>
+    <label for="9">"O conhecimento é a única riqueza que os tiranos não podem expropriar." - Leonardo da Vinci</label>
+    <br>
+    <input type="checkbox" id="10" onclick="check(10)"/>
+    <label for="10">"A beleza perece na vida, mas é imortal na arte." - Leonardo da Vinci</label>
+</div>
+<br>
+<button id="botao" onclick="location = 'index30.html'">Continuar</button>
+
+<script>
+    var checkboxes = new Array(10).fill(false);
+
+    function check(index) {
+        checkboxes[index - 1] = !checkboxes[index - 1];
+        var checkCount = checkboxes.reduce((count, isChecked) => count + (isChecked ? 1 : 0), 0);
+
+        if (checkCount === 10) {
+            document.getElementById("botao").style.display = "block";
+        } else {
+            document.getElementById("botao").style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

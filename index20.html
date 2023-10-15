@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<style>
+ 
+body {
+        font-family: Arial, sans-serif;
+        background-color: #EDE7F6;
+        margin: 0;
+        padding: 0;
+    }
+
+    #start {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .mg {
+        background-color: purple;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    .texto{
+        text-align: center;
+    }
+
+    .bt{
+        display: flex;
+        width: 40%;
+        height: 40%;
+        left: 40%;
+        top: 40%;
+        cursor: pointer;
+        
+     
+    }
+
+
+   .bd{
+    display: flex;
+        width: 20%;
+        height: 20%;
+        left: 30%;
+        display: none;
+        
+      
+   }
+   #botaoContinuar {
+    border-color: purple;
+    width: 10%;
+    height: 20%;
+    position: relative;
+    top: 200px;
+    left: 450px;
+
+   }
+</style>
+
+
+
+
+<body>
+    <div class="mg"><h1>Mouse Game</h1></div>
+    <br>
+    <p class="texto">Clique em cada um dos botões abaixo para avançar para a próxima página:</p>
+
+    <table style="width: 80%;">
+        <tbody>
+            <tr>
+                <td><picture> <img class="bt" src="page20.png" onclick="exibir1()"></picture> </td>
+                <td><picture> <img class="bt" src="page20.png" onclick="exibir2()"></picture></td>
+                <td><picture> <img class="bt" src="page20.png" onclick="exibir3()"></picture></td>
+                <td><picture> <img class="bt" src="page20.png" onclick="exibir4()"></picture></td>
+                <td><picture> <img class="bt" src="page20.png" onclick="exibir5()"></picture></td>
+                <td><picture> <img class="bt" src="page20.png" onclick="exibir6()"></picture></td>
+                <td><picture> <img class="bt" src="page20.png" onclick="exibir7()"></picture></td>
+            </tr>
+
+    
+
+            <tr>
+                <td><picture> <img id="1" class="bd"  src="2page20.png"></picture> </td>
+                <td><picture> <img id="2" class="bd" src="2page20.png"></picture> </td>
+                <td><picture> <img id="3" class="bd" src="2page20.png"></picture> </td>
+                <td><picture> <img id="4" class="bd" src="2page20.png"></picture> </td>
+                <td><picture> <img id="5" class="bd" src="2page20.png "></picture> </td>
+                <td><picture> <img id="6" class="bd" src="2page20.png"></picture> </td>
+                <td><picture> <img id="7" class="bd" src="2page20.png "></picture> </td>
+            </tr>
+            <tr>
+               
+                <td colspan="7"><button id="botaoContinuar" style="display: none;" onclick="location = 'index21.html'">Continuar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function exibir1() {
+            document.getElementById("1").style.display = "block";
+            verificarExibicaoCompleta();
+        }
+        function exibir2() {
+            document.getElementById("2").style.display = "block";
+            verificarExibicaoCompleta();
+        }
+        function exibir3() {
+            document.getElementById("3").style.display = "block";
+            verificarExibicaoCompleta();
+        }
+        function exibir4() {
+            document.getElementById("4").style.display = "block";
+            verificarExibicaoCompleta();
+        }
+        function exibir5() {
+            document.getElementById("5").style.display = "block";
+            verificarExibicaoCompleta();
+        }
+        function exibir6() {
+            document.getElementById("6").style.display = "block";
+            verificarExibicaoCompleta();
+        }
+        function exibir7() {
+            document.getElementById("7").style.display = "block";
+            verificarExibicaoCompleta();
+        }
+
+        function verificarExibicaoCompleta() {
+            var todasExibidas = true;
+            var imagens = document.querySelectorAll(".bd");
+            for (var i = 0; i < imagens.length; i++) {
+                if (imagens[i].style.display !== "block") {
+                    todasExibidas = false;
+                    break;
+                }
+            }
+
+    
+            if (todasExibidas) {
+                document.getElementById("botaoContinuar").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

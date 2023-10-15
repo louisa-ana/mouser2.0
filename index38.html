@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #EDE7F6;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .mg {
+        background-color: purple;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .text {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+        color: blueviolet;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+       
+    }
+
+    .respostas, .perguntas {
+        width: 45%;
+    }
+
+    .respostas h3, .perguntas h4 {
+        text-align: center;
+        color: blueviolet;
+    }
+
+    .respostas p, .perguntas p {
+        margin: 0;
+    }
+    
+    .bd{
+        display: none;
+        width: 30px;
+        height: 30px;
+    }
+    
+    #botao{
+        display: none;
+        position: relative;
+        left: 20%;
+        border-color: blueviolet;
+        top: 70%;
+    }
+</style>
+
+<body>
+    <div class="mg"><h1>Mouse Game</h1></div>
+
+   <h2 id="resposta"></h2>
+
+<hr>
+    <br>
+    <p class="text">Pratique suas habilidades de copiar e colar <strong>copiando</strong> as respostas na coluna da esquerda e <strong>copiando</strong>-as ao lado das perguntas corretas à direita.</p> 
+    <p class="text"> Para copiar o texto, destaque-o com o mouse, mantenha pressionada a tecla <strong>Ctrl</strong> do teclado e toque rapidamente na tecla <strong>C</strong>. Para colar , clique dentro da caixa de texto onde deseja colar a resposta, mantenha pressionada a tecla <strong>Ctrl</strong> e toque rapidamente na tecla<strong>V</strong> .</p>
+    <p class="text"> Você deve responder todas as perguntas corretamente antes de continuar.</p>
+    <br>
+<hr>
+
+<div class="container">
+   <div class="respostas">
+       <h3>Respostas:</h3>
+       <p>A. Briófitas</p>
+       <hr>
+       <p>B. Pteridófitas</p>
+       <hr>
+       <p>C. Angiospermas</p>
+       <hr>
+       <p>D. Gimnospermas</p>
+   </div>
+
+   <div class="perguntas">
+       <h4>Questões:</h4>
+       <p>Qual é o grupo de plantas que geralmente é encontrado em ambientes úmidos, não possui vasos condutores de seiva e não produz flores nem sementes?</p>
+       <p> <input type="text" id="1resposta" placeholder="Cole aqui" readonly onpaste="handlePaste(event, '1resposta')"></p> <picture> <img id="1img" class="bd"  src="2page20.png"></picture>
+       <p id="1mensagem" style="color: red;"></p>
+       <hr>
+       <p>Que grupo de plantas possui vasos condutores de seiva, mas ainda se reproduz por meio de esporos em vez de sementes?</p>
+       <p> <input type="text" id="2resposta" placeholder="Cole aqui" readonly onpaste="handlePaste(event, '2resposta')"></p> <picture> <img id="2img" class="bd"  src="2page20.png"></picture>
+       <p id="2mensagem" style="color: red;"></p>
+       <hr>
+       <p>Quais plantas têm sementes nuas, sem a proteção de frutos, e frequentemente possuem folhas em forma de agulha?</p>
+       <p> <input type="text" id="3resposta" placeholder="Cole aqui" readonly onpaste="handlePaste(event, '3resposta')"></p>  <picture> <img id="3img" class="bd"  src="2page20.png"></picture>
+       <p id="3mensagem" style="color: red;"></p>
+       <hr>
+       <p> Que tipo de plantas produz flores e sementes encapsuladas em frutos?</p>
+       <p> <input type="text" id="4resposta" placeholder="Cole aqui" readonly onpaste="handlePaste(event, '4resposta')"></p> <picture> <img id="4img" class="bd"  src="2page20.png"></picture>
+       <p id="4mensagem" style="color: red;"></p>
+   </div>
+</div>
+
+<div>
+    <button id="botao" onclick="checkAllAnswers();location = 'index39.html'">Continuar</button>
+</div>
+
+<script>
+var nome = localStorage.getItem("nome");
+    var sobrenome = localStorage.getItem("sobrenome");
+    if (nome && sobrenome) {
+        var saudacao = "Você está indo bem, " + nome + " " + sobrenome + "!";
+        document.getElementById("resposta").textContent = saudacao;
+    }
+
+
+
+    let correctAnswers = {
+        1: "Briófitas",
+        2: "Pteridófitas",
+        3: "Gimnospermas",
+        4: "Angiospermas"
+    };
+
+    function checkAnswer(questionNumber) {
+        const inputElement = document.getElementById(questionNumber + "resposta");
+        const imageElement = document.getElementById(questionNumber + "img");
+        const messageElement = document.getElementById(questionNumber + "mensagem");
+
+        if (inputElement.value.trim().toLowerCase() === correctAnswers[questionNumber].toLowerCase()) {
+            imageElement.style.display = "block";
+            messageElement.textContent = "";
+        } else {
+            imageElement.style.display = "none";
+            messageElement.textContent = "Resposta errada! Tente novamente!";
+        }
+    }
+
+    function checkAllAnswers() {
+        let allAnswersCorrect = true;
+
+        for (let i = 1; i <= 4; i++) {
+            const imageElement = document.getElementById(i + "img");
+            if (imageElement.style.display !== "block") {
+                allAnswersCorrect = false;
+                break;
+            }
+        }
+
+        if (allAnswersCorrect) {
+            document.getElementById("botao").style.display = "block";
+        } else {
+            document.getElementById("botao").style.display = "none";
+        }
+    }
+
+    function handlePaste(event, inputId) {
+        event.preventDefault();
+        const clipboardData = event.clipboardData || window.clipboardData;
+        const pastedData = clipboardData.getData("text/plain");
+        document.getElementById(inputId).value = pastedData;
+        checkAnswer(inputId.charAt(0)); // Check the answer after pasting
+        checkAllAnswers(); // Check if all answers are correct
+    }
+</script>
+</body>
+</html>

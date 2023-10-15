@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<style>
+ 
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #EDE7F6;
+            margin: 0;
+            padding: 0;
+        }
+    
+        #start {
+            text-align: center;
+            margin-top: 50px;
+        }
+    
+        .mg {
+            background-color: purple;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .text{
+            text-align: center;
+        }
+        #msg{
+            display: flex;
+            justify-content: center;
+        }
+
+</style>
+
+
+<body>
+    <div class="mg"><h1>Mouse Game</h1></div>
+
+
+    <br>
+    <p class="text"> As caixas de mensagens são mensagens curtas que o computador coloca na tela para alertá-lo sobre informações importantes ou para fazer perguntas antes de realizar uma tarefa.</p>
+    <p class="text"> Quando uma caixa de mensagem aparecer, você deverá ler a mensagem ou pergunta e responder clicando no botão apropriado na caixa de mensagem.</p>
+    <p class="text">Clique no link abaixo para exibir uma caixa de mensagem, leia a mensagem e clique no botão apropriado na caixa.</p>
+    <br>
+
+ 
+
+    <div>
+        <a href="#" id="msg" onclick="mensagem()" >Clique em mim para exibir uma caixa de mensagem</a>
+    </div>
+
+    <script>
+      function mensagem() {
+let ação;
+if (confirm("Deseja ir para a proxima página?") == true) {
+    ação = location = 'index24.html'
+} else 
+    ação = location = 'index22.html'
+}
+
+
+
+    </script>
+    
+    </body>

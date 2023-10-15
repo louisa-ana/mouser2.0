@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+    <title>page31</title>
+
+    <style>
+      
+ 
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #EDE7F6;
+            margin: 0;
+            padding: 0;
+        }
+    
+        #start {
+            text-align: center;
+            margin-top: 50px;
+        }
+    
+        .mg {
+            background-color: purple;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .text{
+            text-align: center;
+        }
+
+        .containerimagens{
+            position: absolute;
+            left:55%;
+            top:40%;
+        }
+
+        #img{
+            width: 250px;
+            height: 250px;
+        }
+        .hidden{
+            visibility:hidden;
+            
+        }
+
+        #continue{
+            border-color: lightblue;
+            position: absolute;
+            left: 45%;
+            top: 75%;
+
+        }
+
+        .column{
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+            position: absolute;
+            left: 37%;
+            top: 48%;
+        }
+
+        .row{
+            display: flex;
+            padding: 0.3rem;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+      
+        
+     
+    </style>
+  </head>
+
+  <body>
+    <header>
+        <div class="mg"><h1>Mouse Game</h1></div>
+
+        <br>
+        <p class="text"> Vizualize uma ou mais obras de arte abaixo e clique no botão "Continuar"! </p>
+        <p class="text">Você está indo bem!</p>
+        <br>
+
+      <div class="content">
+        <p class="text">A imagem correspondente está ao lado:</p>
+        <div class="row">
+          <div class="column">
+            <label for="">
+              <input type="radio" name="radio" />
+              O Grito
+            </label>
+
+            <label for="">
+              <input type="radio" name="radio" />
+              O Beijo
+            </label>
+
+            <label for="">
+              <input type="radio" name="radio" />
+              A noite estrelada
+            </label>
+
+            <label for="">
+              <input type="radio" name="radio" />
+              Monalisa
+            </label>
+          </div>
+        <div class="containerimagens">
+            <img src="grito.png" alt="" id="img" />
+            
+          </div>
+        </div>
+
+         
+          <button class="hidden" id="continue" onclick="location = 'index33.html'">Continuar</button>
+        
+      </div>
+    </main>
+
+    <script>
+      const radios = document.querySelectorAll("input");
+      const next = document.querySelector("#continue");
+      const img = document.querySelector("#img");
+
+      radios.forEach((box, i) => {
+        box.addEventListener("click", () => {
+          let src = ".png";
+
+          switch (i) {
+            case 0:
+              src = "grito.png";
+              break;
+            case 1:
+              src = "obeijo.png";
+              break;
+            case 2:
+              src = "noiteestrelada.png";
+              break;
+            case 3:
+              src = "monalisa.png";
+              break;
+            default:
+              src = "moca.png";
+              break;
+          }
+
+          img.setAttribute("src", src);
+          next.classList.remove("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

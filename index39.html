@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mousegame</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #A283E0, #EDE7F6);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .mg {
+            background-color: #6A1B9A;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            top:0%;
+            width: calc(100% - 60px);
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+
+        button {
+            background-color: #6A1B9A;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #491272;
+        }
+
+        .pics{
+            position: absolute;
+
+        }
+
+        .text{
+            size: 40px;
+            text-align: center;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="mg"><h1>Mouse Game</h1></div>
+    
+    <h2>Muito Obrigada por jogar!</h2>
+    <div>
+<picture> <img src="flor.png" class="pics"></picture> 
+<picture> <img src="flor.png" class="pics2"></picture>        
+    </div>
+    <p class="text">Espero que este exercício tenha lhe auxiliado a aprender e aprimorar suas habilidades!</p>
+    <p class="text">Caso queira recomeçar clique no botão abaixo!</p>
+    <div><button id="pratica" onclick="location = 'idex2.html'">Tentar novamente</button></div>
+</body>
+</html>
